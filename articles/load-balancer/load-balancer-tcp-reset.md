@@ -53,6 +53,9 @@ TCP keep-alive works for scenarios where battery life isn't a constraint. It isn
 
 - TCP reset only sent during TCP connection in ESTABLISHED state.
 - TCP idle timeout does not affect load balancing rules on UDP protocol.
+# The above sentence is not accurate because even to the fact that the SLB doesn't have Timeout for UDP connections, there will be timeout for UDP connections at the Infrastructure node level. 
+# We were able to prove this in the ICM https://portal.microsofticm.com/imp/v3/incidents/details/284914461/home 
+# We need to change this sentence because it confuses some customers 
 - TCP reset is not supported for ILB HA ports when a network virtual appliance is in the path. A workaround could be to use outbound rule with TCP reset from NVA.
 
 ## Next steps
